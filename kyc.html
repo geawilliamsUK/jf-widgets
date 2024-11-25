@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.withpersona.com/dist/persona-v5.1.2.js" integrity="sha384-nuMfOsYXMwp5L13VJicJkSs8tObai/UtHEOg3f7tQuFWU5j6LAewJbjbF5ZkfoDo" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <script>
+            const startKyc = () => {
+                const client = new Persona.Client({
+                    templateId: 'itmpl_UuuaS5X4g9iokybgnZzdBwqm16K5',
+                    environmentId: 'env_dTWUpy9ABSzdDqJnFvEA9ckE16Go',
+                    onReady: () => client.open(),
+                    onComplete: ({ inquiryId, status, fields }) => {
+                    console.log(`Completed inquiry ${inquiryId} with status ${status}`);
+                    }
+                });
+            }
+        </script>
+        <button onclick="startKyc()">Start KYC</button>
+    </body>
+</html>
